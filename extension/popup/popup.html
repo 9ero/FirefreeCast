@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: system-ui, sans-serif;
+      background: #0f0f1a;
+      color: #eee;
+      margin: 0;
+    }
+    h2 { margin: 0 0 14px; font-size: 15px; color: #ff6b6b; letter-spacing: 1px; }
+    label { font-size: 11px; color: #888; display: block; margin-bottom: 4px; text-transform: uppercase; }
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      background: #1a1a2e;
+      color: #eee;
+      font-size: 14px;
+      margin-bottom: 12px;
+      outline: none;
+    }
+    input:focus { border-color: #ff6b6b; }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #cast-btn { background: #ff6b6b; color: #fff; }
+    #cast-btn:hover { background: #e05555; }
+    #cast-btn.stop { background: #444; }
+    #cast-btn.stop:hover { background: #555; }
+    #cast-btn:disabled { background: #333; color: #666; cursor: default; }
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 20px;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #444;
+      flex-shrink: 0;
+    }
+    .dot.connecting { background: #f0a500; animation: pulse 1s infinite; }
+    .dot.connected  { background: #4caf50; }
+    .dot.error      { background: #ff6b6b; }
+    @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.4 } }
+  </style>
+</head>
+<body>
+  <h2>FIRECAST</h2>
+  <label>IP del Fire TV</label>
+  <input type="text" id="ip-input" placeholder="192.168.1.x" autocomplete="off" spellcheck="false" />
+  <button id="cast-btn">Iniciar Cast</button>
+  <div id="status">
+    <span class="dot" id="dot"></span>
+    <span id="status-text">Listo</span>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Android build
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/**/*.iml
+android/captures/
+android/.cxx/
+
+# Extension
+extension/node_modules/
+
+# General
+.DS_Store
+.idea/
+*.swp
+*.swo
+Thumbs.db

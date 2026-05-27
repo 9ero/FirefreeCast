@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "FireCast",
+  "version": "0.2.0",
+  "description": "Cast your browser tab to Fire TV via WebRTC",
+  "permissions": ["tabCapture", "storage", "tabs", "offscreen"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Cast to Fire TV"
+  },
+  "background": {
+    "service_worker": "src/service_worker.js"
+  }
+}
